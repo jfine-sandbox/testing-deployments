@@ -6,21 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.deployment.environment == 'staging'
     steps:
-    - name: Deployment Comment
-      run: >
-        curl -X POST 
-        -H "Accept: application/vnd.github+json" 
-        -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" 
-        https://api.github.com/repos/${{ github.repository }}/issues/1/comments 
-        -d '{"body":"Staging comment"}'
-  Production-Deployment-Comment:
-    runs-on: ubuntu-latest
-    if: github.event.deployment.environment == 'production'
-    steps:
-    - name: Deployment Comment
-      run: >
-        curl -X POST 
-        -H "Accept: application/vnd.github+json" 
-        -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" 
-        https://api.github.com/repos/${{ github.repository }}/issues/1/comments 
-        -d '{"body":"Production comment"}'
+      - run: >
+          curl -X POST 
+          -H "Accept: application/vnd.github+json" 
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" 
+          https://api.github.com/repos/${{ github.repository }}/issues/1/comments 
+          -d '{"body":"Staging comment"}'
