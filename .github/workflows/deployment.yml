@@ -1,5 +1,5 @@
 name: Deployment
-concurrency: staging
+concurrency: ${{ inputs.environment }}
 on:
   workflow_dispatch:
     inputs:
@@ -10,6 +10,6 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: ${{ inputs.environment }}
     steps:
       - run: echo "This would be a deploy or something"
