@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deployment Comment
-      run: echo "github.ref ${{github.ref}} github.ref_name ${{github.ref_name}} github.event.deployment.enviroment ${{github.event.deployment.enviroment}}  github.event.deployment ${{github.event.deployment}}  github.event.enviroment ${{github.event.enviroment}}"
+      run: echo "github.ref ${{github.ref}} github.ref_name ${{github.ref_name}} github.event.deployment.environment ${{github.event.deployment.environment}}  github.event.deployment ${{github.event.deployment}}  github.event.environment ${{github.event.environment}}"
