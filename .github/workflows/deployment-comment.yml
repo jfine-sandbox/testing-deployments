@@ -1,5 +1,7 @@
 name: Deployment Comment
-on: [deployment]
+on:
+  deployment:
+    enviroment: staging
 jobs:
   Staging-Deployment-Comment:
     runs-on: ubuntu-latest
