@@ -2,9 +2,11 @@ name: Deployment
 concurrency: staging
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 jobs:
   deployment:
     runs-on: ubuntu-latest
