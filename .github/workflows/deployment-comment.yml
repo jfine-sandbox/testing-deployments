@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deployment Comment
-      run: printenv
+      run: echo "github.ref: ${{github.ref}} github.ref_name: ${{github.ref_name}} github.event: ${{github.event}}"
