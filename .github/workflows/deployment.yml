@@ -1,5 +1,5 @@
 name: Deployment
-concurrency: production
+concurrency: staging
 on:
   workflow_dispatch:
   push:
@@ -8,6 +8,6 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: production
+    environment: staging
     steps:
       - run: echo "This would be a deploy or something"
