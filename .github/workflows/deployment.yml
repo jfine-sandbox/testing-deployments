@@ -1,5 +1,4 @@
 name: Deployment
-concurrency: ${{ inputs.environment }}
 on:
   workflow_dispatch:
     inputs:
