@@ -11,4 +11,4 @@ jobs:
           -H "Accept: application/vnd.github+json" 
           -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" 
           https://api.github.com/repos/${{github.repository}}/issues/1/comments
-          -d '{"body":"${{github.event.deployment_status.state}}"}'
+          -d '{"body":"${{github.event.deployment_status.state}} and ${{github.event.deployment.ref}}"}'
