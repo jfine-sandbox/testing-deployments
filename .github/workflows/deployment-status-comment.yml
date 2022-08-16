@@ -4,7 +4,7 @@ on:
 jobs:
   comment:
     runs-on: ubuntu-latest
-    if: github.event.deployment.environment == 'staging'
+    if: github.event.deployment.environment == 'staging' && github.event.deployment_status.state == 'success'
     steps:
       - run: >
           curl -X POST 
