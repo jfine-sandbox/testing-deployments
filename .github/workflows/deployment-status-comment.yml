@@ -12,4 +12,4 @@ jobs:
           -H "Accept: application/vnd.github+json" 
           -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" 
           -d '{"body":"Here's the performance suite results!"}'
-          "https://api.github.com/repos/jfine-sandbox/testing-deployments/issues/2/comments"
+          https://api.github.com/repos/jfine-sandbox/testing-deployments/issues/2/comments
