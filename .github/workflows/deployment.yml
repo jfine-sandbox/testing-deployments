@@ -12,5 +12,5 @@ jobs:
     environment: ${{inputs.environment}}
     steps:
       - run: echo Starting
-      - run: sleep 30
+      - run: sleep 10
       - run: echo Done
