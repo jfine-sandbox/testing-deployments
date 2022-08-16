@@ -9,5 +9,5 @@ jobs:
           curl -X POST 
           -H "Accept: application/vnd.github+json" 
           -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" 
-          $(curl -s -H "Accept: application/vnd.github+json" -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" 'https://api.github.com/repos/jfine-sandbox/testing-deployments/pulls?head=jfine-sandbox:jfine-patch-1&state=open' | jq '.[0].comments_url')
+          $(curl -s -H "Accept: application/vnd.github+json" -H "Authorization: token ${{secrets.GITHUB_TOKEN}}" 'https://api.github.com/repos/jfine-sandbox/testing-deployments/pulls?head=jfine-sandbox:jfine-patch-1&state=open' | jq -r '.[0].comments_url')
           -d '{"body":"Here's the performance suite results!"}'
