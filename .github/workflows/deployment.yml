@@ -1,13 +1,16 @@
 name: Deployment
-concurrency: staging
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+    inputs:
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 jobs:
   deployment:
     runs-on: ubuntu-latest
-    environment: staging
+    environment: ${{inputs.environment}}
     steps:
-      - run: echo "This would be a deploy or something"
+      - run: echo Starting
+      - run: sleep 10
+      - run: echo Done

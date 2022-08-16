@@ -1,9 +1,0 @@
-name: Deployment Comment
-on: [deployment]
-jobs:
-  Staging-Deployment-Comment:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Deployment Comment
-      run: |
-        curl -X POST -H "Accept: application/vnd.github+json" -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" https://api.github.com/repos/${{ github.repository }}/issues/1/comments -d '{"body":"github.env: ${{ github.env }}"}'
