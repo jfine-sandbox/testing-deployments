@@ -1,5 +1,6 @@
-name: Deployment Status Comment
+name: Performance
 on: [deployment_status]
+concurrency: performance-${{github.event.deployment.environment}}
 jobs:
   comment:
     runs-on: ubuntu-latest
