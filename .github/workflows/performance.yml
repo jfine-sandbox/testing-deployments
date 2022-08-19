@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{github.event.deployment.environment == 'staging' && github.event.deployment_status.state == 'success'}}
     steps:
+      - run: printenv
       - run: echo "${{toJSON(github)}}"
       - run: >
           curl -X POST 
